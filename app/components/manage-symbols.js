@@ -7,8 +7,16 @@ const component = Ember.Component.extend({
 
   actions: {
     removeSymbol (symbol) {
+      const symId = symbol.get('symbol');
+
       symbol.get('days').forEach(d => console.log(d) && d.unloadRecord());
       symbol.unloadRecord();
+
+      let syms = this.get('settings.symbols');
+      if (syms.includes(symId)) {
+        syms.splice(syms.indexOf(symId), 1);
+      }
+      this.set('settings.symbols', syms);
     },
     addSymbol (symbol) {
       symbol = symbol.toUpperCase();

@@ -1,0 +1,14 @@
+
+
+@import "ember-cli-font-awesome-sass";
+
+@import "ember-cli-bootstrap-4/bootstrap";
+
+body {
+  padding-bottom: 20px;
+  font-family: $font-family-monospace;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}

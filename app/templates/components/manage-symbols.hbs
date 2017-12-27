@@ -1,0 +1,43 @@
+<div class="card d-print-none mt-3 mb-4">
+
+  <div class="card-header py-1" data-toggle="collapse" href="#options" aria-expanded="true" aria-controls="options">
+    <span class="text-muted">Click to show/hide options</span>
+  </div>
+
+  <div class="collapse" id="options">
+    <div class="card-body">
+
+      <div class="row">
+        <div class="col col-md-8 col-lg-6">
+
+          <label for="add-symbol">Add Symbol</label>
+          <form {{action 'addSymbol' newSymbol on='submit'}}>
+            <div class="input-group mb-2">
+              {{input value=newSymbol class='form-control' id='add-symbol'}}
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit">+</button>
+              </span>
+            </div>
+          </form>
+
+          <div class="list-group">
+            {{#each symbolsSorted as |s|}}
+              <div class="list-group-item">
+                {{s.symbol}}
+                <a href="#" class="btn btn-sm m-0 py-0 btn-outline-danger float-right"
+                  {{action 'removeSymbol' s}}>
+                  Remove
+                </a>
+              </div>
+            {{/each}}
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

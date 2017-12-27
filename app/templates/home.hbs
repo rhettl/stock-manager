@@ -1,0 +1,25 @@
+
+{{manage-symbols model}}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Date</th>
+      <th class="text-right" scope="col">Open</th>
+      <th class="text-right" scope="col">Close</th>
+      <th class="text-right" scope="col">Change</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each symbolsSorted as |sym|}}
+      <tr>
+        <th scope="row">{{sym.symbol}}</th>
+        <td>{{moment-format sym.lastDay.date 'YYYY-MM-DD'}}</td>
+        <td class="text-right">{{money-format sym.lastDay.open}}</td>
+        <td class="text-right">{{money-format sym.lastDay.close}}</td>
+        <td class="text-right">{{format-change sym.lastDay.change}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

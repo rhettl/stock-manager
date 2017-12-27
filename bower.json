@@ -1,0 +1,6 @@
+{
+  "name": "stock-report",
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}
